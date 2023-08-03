@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="box">
+        <h2>Labels:</h2>
+        <ul>
+            <li *ngFor="let item of itemList">{{ item }}</li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <div class="textbox">
+            <input type="text" [(ngModel)]="inputText" placeholder="Insert elements">
+            <button (click)="addItem()">Add</button>
+        </div>
+        <div class="datatext">
+            Data:<br>
+        </div>
+        <div class="button-container">
+            <div class="upload-container">
+                <input type="file" (change)="onFileSelected($event)" id="fileInput" style="display: none" />
+                <label for="fileInput" class="custom-button">Upload...</label>
+            </div>
+            <div class="download-container">
+                <label class="custom-button" (click)="onDownload()">Download</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+
+<mat-tab-group>
+  <mat-tab *ngFor="let tab of tabs" [label]="tab.label">
+    <ng-template matTabContent>
+      <ng-template [ngIf]="tab.component === 'GeneralComponent'">
+        <app-general></app-general>
+      </ng-template>
+      <ng-template [ngIf]="tab.component === 'DoneComponent'">
+        <app-done></app-done>
+      </ng-template>
+      <ng-template [ngIf]="tab.component === 'PendingComponent'">
+        <app-pending></app-pending>
+      </ng-template>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

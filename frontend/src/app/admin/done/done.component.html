@@ -1,0 +1,26 @@
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img [src]="file_data" title="Profile Picture" height="500px" width="800px" />
+            <input
+                type="file"
+                id="img"
+                style="display:none"
+                accept="image/*"
+                (change)="onButtonPrevious(); onButtonNext()"
+            />
+        </div>
+        <div class="content-container">
+            <div class="textbox">
+              Done by: <br>
+              &nbsp;&nbsp;&nbsp;{{ labeller }} <br><br>
+              Assigned label: <br>
+              &nbsp;&nbsp;&nbsp;{{ mask }}
+            </div>
+            <div class="button-container">
+              <button class="button" (click)="onButtonPrevious()">Previous</button>
+              <button class="button" (click)="onButtonNext()">Next</button>
+            </div>
+        </div>
+    </div>
+</body>

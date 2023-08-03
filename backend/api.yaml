@@ -1,0 +1,129 @@
+openapi: "3.0.0"
+info:
+  title: Your Flask API
+  version: "1.0.0"
+servers:
+  - url: "http://127.0.0.1:5000"
+paths:
+  /authentication/validate:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/auth"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+  /images/data:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/data"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+  /images/table:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/table"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+  /images/add:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/add_image"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+  /labels/get:
+    get:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+  /labels/add:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/add_label"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: ERROR
+components:
+  schemas:
+    auth:
+      title: Authentication Data
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required:
+        - username
+        - password
+    add_image:
+      title: Add image data
+      type: object
+      properties:
+        filename:
+          type: string
+        data:
+          type: string
+          format: binary
+      required:
+        - filename
+        - data
+    data:
+      title: Send data
+      type: object
+      properties:
+        id:
+          type: integer
+        label_mode:
+          type: boolean
+      required:
+        - id
+        - label_mode
+    table:
+      title: Send table
+      type: object
+      properties:
+        label:
+          type: string
+        id_mode:
+          type: boolean
+      required:
+        - label
+        - id_mode
+    add_label:
+      title: Add image data
+      type: object
+      properties:
+        label:
+          type: string
+      required:
+        - label
