@@ -21,6 +21,13 @@ The current backend creates 3 users (an admin and two labellers) and the two lab
 8. Now log in with admin again and check the information displayed in the done and pending tabs.
 9. Finally, for testing the label box, comment the lines that create the labels in the database on init (main function of routes.py) and execute the app again.
 
+### Testing
+
+1. Make sure the DATABASE_URL is set in .env
+2. Adjust the testing functions (in tests/unit/test_routes.py) according to the current data on the database for assertion.
+3. From the backend directory run "make test" from the terminal (results of pytest will appear in terminal).
+4. From the frontend directory run "ng test" from the terminal (a pop-up window will appear with the test results).
+
 ## Frontend Component Structure
 
 - Login 
