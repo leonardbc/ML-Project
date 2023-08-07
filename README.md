@@ -64,6 +64,7 @@ These are some features that I thought on adding or testing while coding.
 * It is a good practice to create a class for services (eg html in frontend) and import from there.
 * Some functions from pending and done are very similar, they could be inherited from admin.
 * The labeller cannot correct label from images that he has labelled in other sessions (past logins).
+* Using asyncio and aiohttp.
 
 ## Images
 
