@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { DoneComponent } from './done.component';
 
@@ -8,6 +9,9 @@ describe('DoneComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule 
+      ],
       declarations: [DoneComponent]
     });
     fixture = TestBed.createComponent(DoneComponent);
@@ -17,5 +21,12 @@ describe('DoneComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call requestIds with "done" during component initialization', () => {
+    spyOn(component, 'requestIds'); 
+    component.ngOnInit();
+
+    expect(component.requestIds).toHaveBeenCalledWith('done');
   });
 });

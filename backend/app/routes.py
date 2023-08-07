@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__) 
-CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}}) # CORS(app) (uncomment for swagger)
+CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}}) # CORS(app) (uncomment for swagger or pytest)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

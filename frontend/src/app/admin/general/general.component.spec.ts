@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { GeneralComponent } from './general.component';
 
@@ -8,6 +10,10 @@ describe('GeneralComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        FormsModule 
+      ],
       declarations: [GeneralComponent]
     });
     fixture = TestBed.createComponent(GeneralComponent);
